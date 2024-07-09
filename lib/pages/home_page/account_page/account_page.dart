@@ -4,6 +4,7 @@ import 'package:ecommerce/pages/home_page/account_page/components/details_cards.
 import 'package:ecommerce/widgets_common/bg_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce/widgets_common/custom_textfield.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
