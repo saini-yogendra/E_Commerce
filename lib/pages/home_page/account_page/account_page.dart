@@ -1,10 +1,11 @@
 import 'package:ecommerce/consts/consts.dart';
 import 'package:ecommerce/consts/iconList.dart';
+import 'package:ecommerce/controller/auth_controller.dart';
 import 'package:ecommerce/pages/home_page/account_page/components/details_cards.dart';
+import 'package:ecommerce/pages/login_page/login_page.dart';
 import 'package:ecommerce/widgets_common/bg_widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/widgets_common/custom_textfield.dart';
+import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -18,7 +19,7 @@ class AccountPage extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Align(
+              child: const Align(
                   alignment: Alignment.topRight,
                   child: Icon(
                     Icons.edit,
@@ -50,8 +51,11 @@ class AccountPage extends StatelessWidget {
                   )),
                   OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                          side: BorderSide(color: whiteColor)),
-                      onPressed: () {},
+                          side: const BorderSide(color: whiteColor)),
+                      onPressed: () async {
+                        await Get.put(AuthController().signoutMethod(context));
+                        Get.offAll(() => const LoginPage());
+                      },
                       child: "Logout".text.make())
                 ],
               ),
@@ -75,7 +79,7 @@ class AccountPage extends StatelessWidget {
             ListView.separated(
               shrinkWrap: true,
               separatorBuilder: (context, index) {
-                return Divider(color: lightGrey,);
+                return const Divider(color: lightGrey,);
               },
               itemCount: profileButtonsList.length,
               itemBuilder: (BuildContext context,int index){
@@ -84,7 +88,7 @@ class AccountPage extends StatelessWidget {
                   title: profileButtonsList[index].text.fontFamily(semibold).color(darkFontGrey).make(),
                 );
               },
-            ).box.white.rounded.margin(EdgeInsets.all(12)).padding(EdgeInsets.symmetric(horizontal: 16)).shadowMax.make().box.color(redColor).make()
+            ).box.white.rounded.margin(const EdgeInsets.all(12)).padding(const EdgeInsets.symmetric(horizontal: 16)).shadowMax.make().box.color(redColor).make()
           ],
         ),
       ),

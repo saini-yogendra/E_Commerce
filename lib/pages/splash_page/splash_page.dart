@@ -1,5 +1,7 @@
 import 'package:ecommerce/consts/colors.dart';
 import 'package:ecommerce/consts/consts.dart';
+import 'package:ecommerce/pages/home_page/home/home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:ecommerce/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,8 +20,15 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   
   changeScreen(){
-    Future.delayed(Duration(seconds: 3),(){
-      Get.to(() => LoginPage());
+    Future.delayed(const Duration(seconds: 3),(){
+      // Get.to(() => LoginPage());
+      auth.authStateChanges().listen((User? user){
+        if(user == null && mounted) {
+          Get.to(()=>const LoginPage());
+        } else {
+          Get.to(() => const Home());
+        }
+      });
     });
   }
 
@@ -46,15 +55,15 @@ class _SplashPageState extends State<SplashPage> {
                 width: 300,
               ),
             ),
-            SizedBox(height: 20), // Corrected spacing
+            const SizedBox(height: 20), // Corrected spacing
             applogoWidgets(),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             appname.text.fontFamily(bold).size(22).white.make(),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             appversion.text.white.make(),
-            Spacer(),
+            const Spacer(),
             credits.text.white.make(),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
 
           ],
         ),
