@@ -1,5 +1,9 @@
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
+// ignore_for_file: file_names, duplicate_ignore
+
 import 'package:ecommerce/consts/consts.dart';
-import 'package:ecommerce/consts/images.dart';
 
 const socialIconList = [icFacebookLogo, icGoogleLogo, icTwitterLogo];
 const sliderList = [imgSlider1,imgSlider2,imgSlider3,imgSlider4];

@@ -58,5 +58,5 @@ productsyoumaylike = "Products you may also like";
 
 
 
-const myWallet = "My Wallet", wishlist = "My Wishlist",eranedPoints = "Earned Points",refund = "Refund Request", orders = "My Orders", messages = "Messages";
+const myWallet = "My Wallet", wishlist = "My Wishlist",eranedPoints = "Earned Points",refund = "Refund Request", orders = "My Orders", messages = "Messages", oldpass = "Old Password", newpass = "New Password";
 

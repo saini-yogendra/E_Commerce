@@ -16,10 +16,13 @@ void _main() async {
       appId: "1:1086655191568:android:00011581976d34bb734895",
       messagingSenderId: "1086655191568",
       projectId: "emart-3ff7c",
+      storageBucket: "emart-3ff7c.appspot.com",  // Add this line
     ),
   );
   runApp(const MyApp());
 }
+
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
         fontFamily: regular,
       ),
-      home: SplashPage(),
+      home: const SplashPage(),
     );
   }
 }

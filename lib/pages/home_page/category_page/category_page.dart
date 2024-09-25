@@ -1,5 +1,6 @@
 import 'package:ecommerce/consts/consts.dart';
 import 'package:ecommerce/consts/iconList.dart';
+import 'package:ecommerce/controller/product_controller.dart';
 import 'package:ecommerce/pages/home_page/category_page/category_details.dart';
 import 'package:ecommerce/widgets_common/bg_widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,6 +13,7 @@ class CategoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ProductController());
     return bgWidgets(
       child: Scaffold(
         appBar: AppBar(
@@ -31,6 +33,7 @@ class CategoryPage extends StatelessWidget {
                 categoryList[index].text.color(darkFontGrey).align(TextAlign.center).make()
               ],
             ).box.white.rounded.clip(Clip.antiAlias).outerShadowSm.make().onTap((){
+              controller.getSubCategories(categoryList[index]);
               Get.to(() => CategoryDetails(title: categoryList[index],));
             });
           }),
