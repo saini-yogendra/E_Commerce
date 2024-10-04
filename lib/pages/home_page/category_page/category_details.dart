@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/product_controller.dart';
+ import 'package:ecommerce/controller/product_controller.dart';
 import 'package:ecommerce/pages/home_page/category_page/item_details.dart';
 import 'package:ecommerce/widgets_common/bg_widgets.dart';
 import 'package:flutter/cupertino.dart';
